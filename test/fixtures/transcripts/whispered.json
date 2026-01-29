@@ -1,0 +1,13 @@
+{
+  "name": "whispered",
+  "transcript": "I need to speak quietly because others are sleeping nearby.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "clean",
+    "volume": "low"
+  }
+}

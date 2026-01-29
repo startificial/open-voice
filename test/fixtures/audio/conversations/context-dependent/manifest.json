@@ -1,0 +1,57 @@
+{
+  "name": "context-dependent",
+  "description": "Tests that agent maintains context across turns for pronoun resolution and implicit references",
+  "turns": [
+    {
+      "role": "user",
+      "audioFile": "01-user-sets-context.wav",
+      "transcript": "I'm planning a trip to Paris next month.",
+      "contextRequired": []
+    },
+    {
+      "role": "agent",
+      "audioFile": "agent-response-context.wav",
+      "transcript": "Paris is wonderful! What aspects of your trip can I help with?",
+      "contextRequired": [
+        "Paris",
+        "next month"
+      ]
+    },
+    {
+      "role": "user",
+      "audioFile": "02-user-followup.wav",
+      "transcript": "What's the weather like there?",
+      "delayBeforeMs": 500,
+      "contextRequired": [
+        "Paris"
+      ]
+    },
+    {
+      "role": "agent",
+      "audioFile": "agent-response-weather.wav",
+      "transcript": "In Paris next month, you can expect mild temperatures around 15 to 20 degrees Celsius. It's a lovely time to visit!",
+      "contextRequired": [
+        "Paris",
+        "month from turn 1"
+      ]
+    },
+    {
+      "role": "user",
+      "audioFile": "03-user-another-followup.wav",
+      "transcript": "And good restaurants?",
+      "delayBeforeMs": 300,
+      "contextRequired": [
+        "Paris"
+      ]
+    }
+  ],
+  "expectedBehavior": {
+    "minTurns": 5,
+    "contextMustBePreserved": [
+      "Paris",
+      "trip planning",
+      "time of visit"
+    ],
+    "interruptionHandled": false
+  }
+}

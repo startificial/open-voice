@@ -1,0 +1,13 @@
+{
+  "name": "long-explanation",
+  "transcript": "I'd like to explain my situation in detail. Last week, I purchased a product from your online store, and when it arrived, I noticed that the packaging was damaged. Upon opening it, I found that the item inside was also affected. The screen had a visible crack running from the top left corner to the bottom right. I tried to contact customer support through your website, but the chat feature wasn't working properly. I then sent an email to your support team, but I haven't received a response yet. I'm really hoping we can resolve this issue quickly because I need to use this product for an important presentation next week. Could you please help me with a replacement or refund?",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "clean",
+    "accent": "american"
+  }
+}

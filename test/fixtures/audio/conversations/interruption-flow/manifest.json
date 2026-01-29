@@ -1,0 +1,40 @@
+{
+  "name": "interruption-flow",
+  "description": "Tests interrupt handling when user cuts off agent mid-response",
+  "turns": [
+    {
+      "role": "user",
+      "audioFile": "01-user-starts.wav",
+      "transcript": "Can you tell me about the history of artificial intelligence?",
+      "contextRequired": []
+    },
+    {
+      "role": "user",
+      "audioFile": "02-user-interrupts-midway.wav",
+      "transcript": "Actually, wait. I changed my mind. Can you just give me a brief summary instead?",
+      "isInterruption": true,
+      "delayBeforeMs": 200,
+      "contextRequired": [
+        "AI history topic"
+      ]
+    },
+    {
+      "role": "user",
+      "audioFile": "03-user-continues.wav",
+      "transcript": "That's perfect, thank you. Now, what about machine learning specifically?",
+      "delayBeforeMs": 500,
+      "contextRequired": [
+        "AI context",
+        "brief summary received"
+      ]
+    }
+  ],
+  "expectedBehavior": {
+    "minTurns": 3,
+    "contextMustBePreserved": [
+      "AI topic",
+      "preference for brief responses"
+    ],
+    "interruptionHandled": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "accented-speech",
+  "transcript": "Good morning! I would like to make a reservation for dinner tonight, please.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "clean",
+    "accent": "british"
+  }
+}

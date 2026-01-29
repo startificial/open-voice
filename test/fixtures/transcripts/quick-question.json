@@ -1,0 +1,13 @@
+{
+  "name": "quick-question",
+  "transcript": "What's the weather like today?",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "clean",
+    "accent": "american"
+  }
+}

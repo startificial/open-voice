@@ -1,0 +1,13 @@
+{
+  "name": "hello-world",
+  "transcript": "Hello world. This is a test of the voice agent system.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "clean",
+    "accent": "american"
+  }
+}

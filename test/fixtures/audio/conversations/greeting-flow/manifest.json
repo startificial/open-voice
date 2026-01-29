@@ -1,0 +1,36 @@
+{
+  "name": "greeting-flow",
+  "description": "Basic greeting and response flow to test simple conversation handling",
+  "turns": [
+    {
+      "role": "user",
+      "audioFile": "01-user-hello.wav",
+      "transcript": "Hello! How are you doing today?",
+      "contextRequired": []
+    },
+    {
+      "role": "agent",
+      "audioFile": "02-agent-response.wav",
+      "transcript": "Hello! I'm doing great, thank you for asking. How can I help you today?",
+      "contextRequired": []
+    },
+    {
+      "role": "user",
+      "audioFile": "03-user-followup.wav",
+      "transcript": "I was wondering if you could help me find some information.",
+      "delayBeforeMs": 500,
+      "contextRequired": []
+    },
+    {
+      "role": "agent",
+      "audioFile": "04-agent-response.wav",
+      "transcript": "Of course! I'd be happy to help you find information. What would you like to know about?",
+      "contextRequired": []
+    }
+  ],
+  "expectedBehavior": {
+    "minTurns": 4,
+    "contextMustBePreserved": [],
+    "interruptionHandled": false
+  }
+}

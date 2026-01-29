@@ -1,0 +1,15 @@
+{
+  "id": "greeting-flow-turn-04",
+  "turn": 4,
+  "role": "agent",
+  "text": "Of course! I'd be happy to help you with that. Could you please provide your account number?",
+  "duration_ms": 4590,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "very-long-utterance",
+  "transcript": "This is an extremely long utterance designed to test the system's ability to handle extended speech segments. I'm going to continue speaking for quite a while to ensure that the audio processing pipeline can manage longer recordings without any issues. Let me tell you a story. Once upon a time, there was a developer who wanted to build the perfect voice agent system. They started by creating comprehensive test fixtures, including various types of speech patterns, accents, and conversation flows. The developer knew that testing was crucial for building reliable software. The journey wasn't easy. There were many challenges along the way, including handling different audio formats, managing streaming data, and ensuring low latency responses. But with persistence and careful planning, the developer made steady progress. Thank you for listening to this long utterance.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "duration": "very_long",
+    "content": "extended_narrative"
+  }
+}

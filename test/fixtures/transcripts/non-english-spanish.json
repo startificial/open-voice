@@ -1,0 +1,12 @@
+{
+  "name": "non-english-spanish",
+  "transcript": "Hola, buenos dias. Me gustaria hacer una reservacion para esta noche, por favor.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "language": "spanish",
+    "content": "greeting_and_request"
+  }
+}

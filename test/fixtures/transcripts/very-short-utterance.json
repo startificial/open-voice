@@ -1,0 +1,12 @@
+{
+  "name": "very-short-utterance",
+  "transcript": "Yes.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "duration": "very_short",
+    "content": "single_word"
+  }
+}

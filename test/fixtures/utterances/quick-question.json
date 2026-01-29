@@ -1,0 +1,20 @@
+{
+  "id": "quick-question",
+  "text": "What's the weather like today?",
+  "duration_ms": 1480,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  },
+  "words": [
+    { "word": "What's", "start_ms": 0, "end_ms": 300 },
+    { "word": "the", "start_ms": 300, "end_ms": 450 },
+    { "word": "weather", "start_ms": 450, "end_ms": 750 },
+    { "word": "like", "start_ms": 750, "end_ms": 1000 },
+    { "word": "today", "start_ms": 1000, "end_ms": 1480 }
+  ]
+}

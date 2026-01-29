@@ -1,0 +1,11 @@
+{
+  "name": "speech-then-silence",
+  "transcript": "I'm going to say something and then pause.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "pattern": "speech_then_silence"
+  }
+}

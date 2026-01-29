@@ -1,0 +1,13 @@
+{
+  "id": "long-explanation",
+  "text": "The voice agent system processes audio input through multiple stages. First, the audio is captured and converted to a digital format. Then, speech recognition converts the audio into text. The text is then processed by a language model to generate an appropriate response. Finally, text-to-speech synthesis converts the response back into audio.",
+  "duration_ms": 21260,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "whispered",
+  "text": "This is a whispered message, spoken very quietly and softly.",
+  "duration_ms": 3600,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  },
+  "characteristics": {
+    "style": "whispered",
+    "volume": "low"
+  }
+}

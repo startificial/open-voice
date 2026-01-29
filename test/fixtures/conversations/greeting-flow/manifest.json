@@ -1,0 +1,42 @@
+{
+  "id": "greeting-flow",
+  "name": "Greeting Flow Conversation",
+  "description": "A basic greeting and account inquiry conversation flow",
+  "turns": [
+    {
+      "turn": 1,
+      "role": "user",
+      "audio_file": "turn-01-user.wav",
+      "transcript_file": "turn-01-user.json",
+      "text": "Hello! How are you doing today?"
+    },
+    {
+      "turn": 2,
+      "role": "agent",
+      "audio_file": "turn-02-agent.wav",
+      "transcript_file": "turn-02-agent.json",
+      "text": "Hello! I'm doing great, thank you for asking. How can I help you today?"
+    },
+    {
+      "turn": 3,
+      "role": "user",
+      "audio_file": "turn-03-user.wav",
+      "transcript_file": "turn-03-user.json",
+      "text": "I just wanted to check on my account status."
+    },
+    {
+      "turn": 4,
+      "role": "agent",
+      "audio_file": "turn-04-agent.wav",
+      "transcript_file": "turn-04-agent.json",
+      "text": "Of course! I'd be happy to help you with that. Could you please provide your account number?"
+    }
+  ],
+  "total_duration_ms": 12620,
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  }
+}

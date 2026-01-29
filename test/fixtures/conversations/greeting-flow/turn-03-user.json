@@ -1,0 +1,15 @@
+{
+  "id": "greeting-flow-turn-03",
+  "turn": 3,
+  "role": "user",
+  "text": "I just wanted to check on my account status.",
+  "duration_ms": 2320,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  }
+}

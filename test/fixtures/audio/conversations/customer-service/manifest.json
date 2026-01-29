@@ -1,0 +1,40 @@
+{
+  "name": "customer-service",
+  "description": "Customer service scenario with complaint handling",
+  "turns": [
+    {
+      "role": "user",
+      "audioFile": "01-user-complaint.wav",
+      "transcript": "Hi, I'm calling about a problem with my recent order. The item arrived damaged.",
+      "contextRequired": []
+    },
+    {
+      "role": "user",
+      "audioFile": "02-user-provides-details.wav",
+      "transcript": "The order number is 12345. It was a laptop, and the screen is cracked.",
+      "delayBeforeMs": 1000,
+      "contextRequired": [
+        "damaged order"
+      ]
+    },
+    {
+      "role": "user",
+      "audioFile": "03-user-confirms.wav",
+      "transcript": "Yes, I would like a replacement please. Shipping to the same address is fine.",
+      "delayBeforeMs": 500,
+      "contextRequired": [
+        "order 12345",
+        "replacement request"
+      ]
+    }
+  ],
+  "expectedBehavior": {
+    "minTurns": 3,
+    "contextMustBePreserved": [
+      "order number",
+      "damage description",
+      "replacement preference"
+    ],
+    "interruptionHandled": false
+  }
+}

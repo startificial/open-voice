@@ -1,0 +1,13 @@
+{
+  "name": "noisy-background",
+  "transcript": "This speech has some background noise mixed in.",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "speaker": "test_user",
+    "noiseLevel": "medium",
+    "accent": "american"
+  }
+}

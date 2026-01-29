@@ -1,0 +1,17 @@
+{
+  "id": "accented-speech",
+  "text": "Hello, my name is Maria. I come from a small village in the countryside. The weather here is quite lovely this time of year.",
+  "duration_ms": 6290,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  },
+  "characteristics": {
+    "style": "conversational",
+    "intended_accent": "neutral"
+  }
+}

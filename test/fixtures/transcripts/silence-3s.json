@@ -1,0 +1,12 @@
+{
+  "name": "silence-3s",
+  "transcript": "",
+  "sampleRate": 16000,
+  "channels": 1,
+  "bitDepth": 16,
+  "format": "wav",
+  "metadata": {
+    "duration_ms": 3000,
+    "content": "silence"
+  }
+}
