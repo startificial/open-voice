@@ -1,11 +1,18 @@
 {
-  "name": "numbers-and-spelling",
-  "transcript": "My phone number is 555-123-4567. That's five five five, one two three, four five six seven. My email is john dot smith at example dot com.",
-  "sampleRate": 16000,
-  "channels": 1,
-  "bitDepth": 16,
-  "format": "wav",
-  "metadata": {
-    "content": "numbers_and_contact_info"
+  "id": "numbers-and-spelling",
+  "text": "My account number is 1 2 3 4 5 6 7 8 9. That's spelled A as in Apple, B as in Boy, C as in Cat.",
+  "duration_ms": 7650,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  },
+  "characteristics": {
+    "type": "edge-case",
+    "test_purpose": "numeric and phonetic alphabet recognition",
+    "contains": ["numbers", "phonetic_alphabet"]
   }
 }

@@ -72,4 +72,63 @@ export interface Config {
     /** Speech-to-speech provider (e.g., 'openai-realtime') */
     s2s?: string;
   };
+
+  /** Agent configuration */
+  agent?: {
+    /** System prompt for the LLM */
+    systemPrompt?: string;
+    /** Voice ID for TTS provider */
+    voice?: string;
+    /** Persona configuration for S2S mode */
+    persona?: {
+      voice: string;
+      rolePrompt: string;
+    };
+  };
 }
+
+/**
+ * Error codes for the WebSocket protocol.
+ * Used in error messages sent between client and server.
+ */
+export type ErrorCode =
+  | 'NO_SESSION'
+  | 'INVALID_MESSAGE'
+  | 'INVALID_CONFIG'
+  | 'ADAPTER_NOT_FOUND'
+  | 'ADAPTER_UNHEALTHY'
+  | 'PROCESSING_ERROR'
+  | 'TIMEOUT'
+  | 'CONNECTION_LOST'
+  | 'AUTH_FAILED'
+  | 'RATE_LIMITED';
+
+/**
+ * Error message structure for the WebSocket protocol.
+ */
+export interface ProtocolError {
+  /** Error code for programmatic handling */
+  code: ErrorCode;
+  /** Human-readable error message */
+  message: string;
+  /** Optional additional details */
+  details?: Record<string, unknown>;
+}
+
+/**
+ * WebSocket protocol message types from client to server.
+ */
+export type ClientMessage =
+  | { type: 'audio'; data: ArrayBuffer }
+  | { type: 'config'; config: Partial<Config> }
+  | { type: 'interrupt' };
+
+/**
+ * WebSocket protocol message types from server to client.
+ */
+export type ServerMessage =
+  | { type: 'audio'; data: ArrayBuffer }
+  | { type: 'transcript'; role: 'user' | 'agent'; text: string }
+  | { type: 'status'; status: Status }
+  | { type: 'metrics'; metrics: Metrics }
+  | { type: 'error'; error: ProtocolError };

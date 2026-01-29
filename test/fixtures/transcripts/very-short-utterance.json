@@ -1,12 +1,17 @@
 {
-  "name": "very-short-utterance",
-  "transcript": "Yes.",
-  "sampleRate": 16000,
-  "channels": 1,
-  "bitDepth": 16,
-  "format": "wav",
-  "metadata": {
-    "duration": "very_short",
-    "content": "single_word"
+  "id": "very-short-utterance",
+  "text": "Hi.",
+  "duration_ms": 650,
+  "speaker": "Rachel",
+  "language": "en",
+  "source": "elevenlabs",
+  "audio_format": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "bit_depth": 16
+  },
+  "characteristics": {
+    "type": "edge-case",
+    "test_purpose": "minimal utterance recognition"
   }
 }

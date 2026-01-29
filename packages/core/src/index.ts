@@ -7,7 +7,17 @@
  */
 
 // Types
-export type { Audio, Message, Status, Metrics, Config } from './types.js';
+export type {
+  Audio,
+  Message,
+  Status,
+  Metrics,
+  Config,
+  ErrorCode,
+  ProtocolError,
+  ClientMessage,
+  ServerMessage,
+} from './types.js';
 
 // Adapter interfaces
 export type {

@@ -8,10 +8,15 @@
 import { AudioFixtureLoader, AudioFixture, ConversationFixture, ConversationTurn } from './audio-loader';
 import { TranscriptValidator, ValidationResult } from './transcript-validator';
 
-export interface Pipeline {
-  process(audio: AsyncIterable<ArrayBuffer>): AsyncIterable<ArrayBuffer>;
-  interrupt(): Promise<void>;
-}
+// Re-export Pipeline from core for consumers of this module
+// Using relative import since we're outside the packages workspace
+import type { Pipeline as CorePipeline } from '../../packages/core/src/pipeline';
+
+/**
+ * Pipeline interface for conversation processing.
+ * This is compatible with the Pipeline interface from @open-voice/core.
+ */
+export type Pipeline = CorePipeline;
 
 export interface TurnResult {
   turn: ConversationTurn;

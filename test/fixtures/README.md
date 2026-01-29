@@ -6,41 +6,53 @@ This directory contains audio fixtures and transcripts for testing voice agent p
 
 ```
 test/fixtures/
-├── utterances/              # Single speech segments
-│   ├── hello-world.wav
-│   ├── hello-world.json
-│   ├── quick-question.wav
-│   ├── quick-question.json
-│   ├── long-explanation.wav
-│   ├── long-explanation.json
-│   ├── whispered.wav
-│   ├── whispered.json
-│   ├── accented-speech.wav
-│   └── accented-speech.json
+├── audio/                   # All audio files (canonical location)
+│   ├── utterances/          # Single speech segments (5 files)
+│   │   ├── hello-world.wav
+│   │   ├── quick-question.wav
+│   │   ├── long-explanation.wav
+│   │   ├── whispered.wav
+│   │   └── accented-speech.wav
+│   │
+│   ├── conversations/       # Multi-turn conversation sequences (4 flows)
+│   │   ├── greeting-flow/
+│   │   │   ├── manifest.json
+│   │   │   ├── 01-user-hello.wav
+│   │   │   ├── 02-agent-response.wav
+│   │   │   ├── 03-user-followup.wav
+│   │   │   └── 04-agent-response.wav
+│   │   ├── customer-service/
+│   │   ├── interruption-flow/
+│   │   └── context-dependent/
+│   │
+│   └── edge-cases/          # Edge case audio (9 files)
+│       ├── very-short-utterance.wav
+│       ├── numbers-and-spelling.wav
+│       ├── silence-3s.wav
+│       ├── silence-then-speech.wav
+│       ├── speech-then-silence.wav
+│       ├── noisy-background.wav
+│       ├── non-english-spanish.wav
+│       ├── multiple-speakers.wav
+│       └── very-long-utterance.wav
 │
-├── conversations/           # Multi-turn sequences
-│   └── greeting-flow/
-│       ├── manifest.json
-│       ├── turn-01-user.wav
-│       ├── turn-01-user.json
-│       ├── turn-02-agent.wav
-│       ├── turn-02-agent.json
-│       ├── turn-03-user.wav
-│       ├── turn-03-user.json
-│       ├── turn-04-agent.wav
-│       └── turn-04-agent.json
-│
-└── edge-cases/
-    ├── very-short-utterance.wav
+└── transcripts/             # Ground truth transcripts (JSON)
+    ├── hello-world.json
+    ├── quick-question.json
+    ├── whispered.json
+    ├── accented-speech.json
+    ├── long-explanation.json
     ├── very-short-utterance.json
-    ├── numbers-and-spelling.wav
-    └── numbers-and-spelling.json
+    ├── numbers-and-spelling.json
+    ├── silence-3s.json
+    ├── noisy-background.json
+    ├── ... (all edge cases)
+    └── conversations/
+        ├── greeting-flow.json
+        ├── customer-service.json
+        ├── interruption-flow.json
+        └── context-dependent.json
 ```
-
-## Current Audio Files
-
-The current audio files are **real TTS audio** generated using Eleven Labs Text-to-Speech
-with the Rachel voice. All files are high-quality speech suitable for STT testing.
 
 ## Audio Format
 
@@ -51,7 +63,7 @@ All audio files follow these specifications:
 - **Channels**: Mono
 - **Codec**: PCM signed 16-bit little-endian
 
-## Utterances
+## Utterances (5 fixtures)
 
 | File | Text | Duration |
 |------|------|----------|
@@ -61,28 +73,40 @@ All audio files follow these specifications:
 | whispered.wav | "This is a whispered message, spoken very quietly and softly." | ~3.6s |
 | accented-speech.wav | "Hello, my name is Maria..." | ~6.3s |
 
-## Conversations
+## Conversations (4 flows)
 
 ### greeting-flow
-A 4-turn conversation simulating a customer service greeting:
-1. **User**: "Hello! How are you doing today?"
-2. **Agent**: "Hello! I'm doing great, thank you for asking. How can I help you today?"
-3. **User**: "I just wanted to check on my account status."
-4. **Agent**: "Of course! I'd be happy to help you with that. Could you please provide your account number?"
+A 4-turn basic greeting and assistance conversation.
 
-## Edge Cases
+### customer-service
+A 3-turn customer service complaint flow.
 
-| File | Text | Purpose |
-|------|------|---------|
-| very-short-utterance.wav | "Hi." | Test minimal utterance recognition |
-| numbers-and-spelling.wav | "My account number is 1 2 3 4 5 6 7 8 9..." | Test numeric/phonetic recognition |
+### interruption-flow
+A 3-turn conversation testing interrupt handling.
+
+### context-dependent
+A 5-turn conversation testing context preservation (Paris trip planning).
+
+## Edge Cases (9 fixtures)
+
+| File | Purpose |
+|------|---------|
+| very-short-utterance.wav | Minimal utterance ("Hi.") |
+| numbers-and-spelling.wav | Numeric/phonetic recognition |
+| silence-3s.wav | Pure silence |
+| silence-then-speech.wav | Delayed start |
+| speech-then-silence.wav | Trailing silence |
+| noisy-background.wav | Background noise handling |
+| non-english-spanish.wav | Non-English language |
+| multiple-speakers.wav | Speaker diarization |
+| very-long-utterance.wav | Extended speech (~60s) |
 
 ## Transcript JSON Format
 
 ```json
 {
   "id": "hello-world",
-  "text": "Hello world. This is a test of the voice agent system.",
+  "transcript": "Hello world. This is a test of the voice agent system.",
   "duration_ms": 3050,
   "speaker": "Rachel",
   "language": "en",
@@ -91,11 +115,7 @@ A 4-turn conversation simulating a customer service greeting:
     "sample_rate": 16000,
     "channels": 1,
     "bit_depth": 16
-  },
-  "words": [
-    { "word": "Hello", "start_ms": 0, "end_ms": 400 },
-    ...
-  ]
+  }
 }
 ```
 
@@ -103,20 +123,27 @@ A 4-turn conversation simulating a customer service greeting:
 
 ```json
 {
-  "id": "greeting-flow",
-  "name": "Greeting Flow Conversation",
-  "description": "A basic greeting and account inquiry conversation flow",
+  "name": "greeting-flow",
+  "description": "Basic greeting and response flow",
   "turns": [
     {
-      "turn": 1,
       "role": "user",
-      "audio_file": "turn-01-user.wav",
-      "transcript_file": "turn-01-user.json",
-      "text": "Hello! How are you doing today?"
+      "audioFile": "01-user-hello.wav",
+      "transcript": "Hello! How are you doing today?",
+      "contextRequired": []
     },
-    ...
+    {
+      "role": "agent",
+      "audioFile": "02-agent-response.wav",
+      "transcript": "Hello! I'm doing great...",
+      "contextRequired": []
+    }
   ],
-  "total_duration_ms": 12620
+  "expectedBehavior": {
+    "minTurns": 4,
+    "contextMustBePreserved": [],
+    "interruptionHandled": false
+  }
 }
 ```
 
@@ -125,7 +152,7 @@ A 4-turn conversation simulating a customer service greeting:
 ```typescript
 import { createTestHarness } from '../harness';
 
-const harness = createTestHarness({ fixturesDir: 'test/fixtures' });
+const harness = createTestHarness({ fixturesDir: 'test/fixtures/audio' });
 
 // Load a single utterance
 const fixture = await harness.fixtureLoader.loadUtterance('hello-world');
@@ -166,6 +193,6 @@ For latency testing:
 
 These fixtures were generated using Eleven Labs Text-to-Speech API with the Rachel voice.
 
-**Generated**: January 29, 2026
+**Generated**: January 2026
 **Voice**: Rachel (Eleven Labs)
 **Source**: elevenlabs.io
